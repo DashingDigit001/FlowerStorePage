@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'Baskerville BT';
+	src: url(../../assets/fonts/BaskervilleBT-Roman.woff2) format('woff2'),
+	url(../../assets/fonts/BaskervilleBT-Roman.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
