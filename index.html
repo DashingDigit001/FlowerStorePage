@@ -8,7 +8,7 @@
         <title>Untitled</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/css/Baskerville%20BT.css" />
-        <link rel="stylesheet" href="assets/css/SentyTEA.css" />
+        <!-- <link rel="stylesheet" href="assets/css/SentyTEA.css" /> -->
         <link rel="stylesheet" href="assets/css/styles.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
         <link rel="stylesheet" href="assets/css/Off-Canvas-Sidebar-Drawer-Navbar.css" />
@@ -1172,8 +1172,12 @@
             </div>
         </div>
 
+        <div></div>
+
         <script>
+            console.log(Date.now());
             $(window).on("load", () => {
+                console.log(Date.now());
                 // CustomEase.create("myEase", "M0,0 C0.284,0.04 0.586,0.09 0.69,0.168 0.778,0.234 0.81,0.922 1,1 ");
                 gsapRegisterPlugin();
                 carousel();
