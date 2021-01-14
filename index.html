@@ -19,9 +19,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <script src="assets/js/lazysizes.min.js" async=""></script>
+        <script src="assets/js/pace.min.js"></script>
+        <link href="assets/css/pace-theme-flash.min.css" rel="stylesheet" />
     </head>
 
     <body style="background: rgba(255, 255, 255, 0)">
+        <div class="fixed-top loading" style="height: 100%; width: 100%; background-color: #e5dece; z-index: 4000"></div>
         <div class="modal fade" role="dialog" style="z-index: 3000" tabindex="-1" id="flowers">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
@@ -515,18 +518,18 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-light navbar-expand-md fixed-top" style="padding: 0; background: rgba(255, 255, 255, 0.56)">
+        <!-- <nav class="navbar navbar-light navbar-expand-md fixed-top" style="padding: 0; background: rgba(255, 255, 255, 0.56)">
             <div class="container-fluid">
-                <!-- <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button> -->
-                <!-- <div class="collapse navbar-collapse" id="navcol-1" style="color: #9f6c52; font-family: 'Baskerville BT'">
+                <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1" style="color: #9f6c52; font-family: 'Baskerville BT'">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item" style="margin-right: 45px"><a class="nav-link active" href="#" style="padding: 15px; font-size: 20%; color: #9f6c52">Flowers</a></li>
                         <li class="nav-item" style="margin-right: 45px"><a class="nav-link" href="#" style="padding: 15px; font-size: 20%; color: #9f6c52">Festivals</a></li>
                         <li class="nav-item"><a class="nav-link" href="#" style="padding: 15px; font-size: 20%; color: #9f6c52">Course</a></li>
                     </ul>
-                </div> -->
+                </div>
             </div>
-        </nav>
+        </nav> -->
 
         <div class="container-fluid" style="padding: 0">
             <div class="row no-gutters fixed-top d-none d-xl-flex" style="margin-top: 2%; margin-left: 2.5%; z-index: 2000">
@@ -1084,7 +1087,7 @@
                         </div>
                     </div>
                     <div class="row no-gutters">
-                        <div class="col" style="color: #9f6c52; margin-bottom: 5%">
+                        <div class="col" style="color: #c08c71; margin-bottom: 5%">
                             <h5 style="margin-bottom: 0%; font-size: 0.8vw">uniqueflorist1991@gmail.com</h5>
                         </div>
                     </div>
@@ -1179,10 +1182,20 @@
 
         <script>
             console.log(Date.now());
+            Pace.on("done", () => {
+                gsap.to(".loading", {
+                    duration: 1,
+                    opacity: 0,
+                    ease: "none",
+                    onComplete: () => $(".loading").attr("class", "d-none"),
+                });
+            });
+
             $(window).on("load", () => {
                 console.log(Date.now());
                 // CustomEase.create("myEase", "M0,0 C0.284,0.04 0.586,0.09 0.69,0.168 0.778,0.234 0.81,0.922 1,1 ");
                 gsapRegisterPlugin();
+
                 carousel();
 
                 iconScrollTo();
